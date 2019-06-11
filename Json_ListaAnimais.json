@@ -1,0 +1,147 @@
+{"animais":
+	{"animal":
+	[
+		{	
+			"nome":"Alterego",
+			"foto":"http://www.argen.com.br/arquivos/genetica/1600x800_fotoGenetica_5a9591ed67c30_27-02-2018_14-14-21.jpg",
+			"categoria":2,
+			"subcategoria":1,
+			"Registro":"AX.153.789",
+			"Data Nascimento":"02/01/2017",
+			"Criador":"Neil Mcdonah",
+			"Proprietário":"Al Total",
+			"Informações":"Um touro completo, muito fácil de ser usado em qualquer rebanho, manejo e região. Muito completo em todos os quesitos. Para ser usado em novilhas. Pedigree trabalhado para altíssimas produções, com muita saúde e conformação.",
+			"Arquivos":
+				[
+					{"url":"http://www.argen.com.br/arquivos/genetica/arquivo/arquivoGenetica_5cd3303e54b18_08-05-2019_16-38-38.pdf"},
+					{"url":"http://www.argen.com.br/arquivos/genetica/arquivo/arquivoGenetica_5cd32ff629009_08-05-2019_16-37-26.pdf"}
+				]
+		},
+		{	
+			"nome":"América",
+			"foto":"http://www.argen.com.br/arquivos/genetica/1600x800_fotoGenetica_58ff7b12603cd_25-04-2017_13-36-34.jpg",
+			"categoria":2,
+			"subcategoria":1,
+			"Registro":" AX.141.053",
+			"Data Nascimento":"03/12/2009",
+			"Criador":"Wiethege, Thomas Halver",
+			"Proprietário":"Aberekin S.A.",
+			"Informações":"Muito tipo, leite, sólidos e saúde aliado a uma excepcional estrutura; Pedigree com 9 gerações consecutivas de vacas classificadas MB e EX, destaque para Miss Tradition Lolli EX90; As filhas de AMERICA apresentam altas produções com bons sólidos além de serem muito apreciadas pela qualidade leiteira; Alta concentração de animais selecionados para elevadas produções e muito tipo para concursos/pista.",
+			"Arquivos":/
+				[
+					{"url":"http://www.argen.com.br/arquivos/genetica/arquivo/arquivoGenetica_5cd3307b04d6c_08-05-2019_16-39-39.pdf"}
+				]
+		}
+		
+	],
+	"cateogria":
+			[
+				{
+				"id":1, 
+				"nome":"Raças Zebuínas",
+				"subcategoria":
+					[
+						{"id":1,"nome":"Nelore"},
+						{"id":2,"nome":"Brahman"},
+						{"id":3,"nome":"Nelore Mocho"},
+						{"id":4,"nome":"Red Brahman"},
+						{"id":5,"nome":"Tabapuã"}
+					]
+				},
+				{
+				"id":2, 
+				"nome":"Raças Leiteiras",
+				"subcategoria":
+					[
+						{"id":1,"nome":"Holandês P&B"},
+						{"id":2,"nome":"Holandês P&B Sexado"},
+						{"id":3,"nome":"Holandês V&B"},
+						{"id":4,"nome":"Holandês Frisio"},
+						{"id":5,"nome":"Fleckvieh"},
+						{"id":6,"nome":"Girolando"},
+						{"id":7,"nome":"Gir Leiteiro"},
+						{"id":8,"nome":"Illawarra"},
+						{"id":9,"nome":"Jersey"},
+						{"id":10,"nome":"Montbeliard"},
+						{"id":11,"nome":"Normando"},
+						{"id":12,"nome":"Pardo Suíço"},
+						{"id":13,"nome":"Sueca Vermelha"}
+					]
+				},			
+				{
+				"id":3, 
+				"nome":"Raças Européias",
+				"subcategoria":
+					[
+						{"id":1,"nome":"Aberdeen Angus"},
+						{"id":2,"nome":"Black Limousin"},
+						{"id":3,"nome":"Belgian Blue"},
+						{"id":4,"nome":"Blond D' Aquitaine"},
+						{"id":5,"nome":"Braford"},
+						{"id":6,"nome":"Brangus"},
+						{"id":7,"nome":"Bristish Blue"},
+						{"id":8,"nome":"Braunvieh (Pardo Suíço)"},
+						{"id":9,"nome":"Charolês"},
+						{"id":10,"nome":"Devon"},
+						{"id":11,"nome":"Limousin"},
+						{"id":12,"nome":"Lincoln Red"},
+						{"id":13,"nome":"Pirenaico"},
+						{"id":14,"nome":"Polled Hereford"},
+						{"id":15,"nome":"Red Angus"},
+						{"id":16,"nome":"Red Brangus"},
+						{"id":17,"nome":"Senepol"},
+						{"id":18,"nome":"Simental"},
+						{"id":19,"nome":"Ultrablack"},
+						{"id":20,"nome":"Watusi"}
+
+					]
+				},				
+				{
+				"id":4, 
+				"nome":"Outras Raças",
+				"subcategoria":
+					[
+						{"id":1,"nome":"British White"},
+						{"id":2,"nome":"Illawarra"},
+						{"id":3,"nome":"Illawarra"},
+						{"id":4,"nome":"Wagyu"},
+						{"id":5,"nome":"Murray Grey"},
+						{"id":6,"nome":"Santa Gertrudis"}
+					]
+				},				
+				{
+				"id":5, 
+				"nome":"Banco Genético",
+				"subcategoria":
+					[
+						{"id":1,"nome":"(B.G.) Aberdeen Angus"},
+						{"id":2,"nome":"(B.G.) Braford"},
+						{"id":3,"nome":"(B.G.) Brahman"},
+						{"id":4,"nome":"(B.G.) Brangus"},
+						{"id":5,"nome":"(B.G.) Braunvieh (Pardo Suíço)"},
+						{"id":6,"nome":"(B.G.) British White"},
+						{"id":7,"nome":"(B.G.) Charolês"},
+						{"id":8,"nome":"(B.G.) Gir Leiteiro"},
+						{"id":9,"nome":"(B.G.) Girolando 5/8"},
+						{"id":10,"nome":"(B.G.) Guzerá"},
+						{"id":11,"nome":"(B.G.) Holandês P&B"},
+						{"id":12,"nome":"(B.G.) Holandês P&B Sexado"},
+						{"id":13,"nome":"(B.G.) Holandês V&B"},
+						{"id":14,"nome":"(B.G.) Illawarra"},
+						{"id":15,"nome":"(B.G.) Jersey"},
+						{"id":16,"nome":"(B.G.) Jersey Sexado"},
+						{"id":17,"nome":"(B.G.) Limousin"},
+						{"id":18,"nome":"(B.G.) Nelore"},
+						{"id":19,"nome":"(B.G.) Nelore Mocho"},
+						{"id":20,"nome":"(B.G.) Normando"},
+						{"id":21,"nome":"(B.G.) Pardo Suiço"},
+						{"id":22,"nome":"(B.G.) Piemontês"},
+						{"id":23,"nome":"(B.G.) Red Brahman"},
+						{"id":24,"nome":"(B.G.) Simental"},
+						{"id":25,"nome":"(B.G.) Sueca Vermelha"}
+					]
+				}
+			]
+	}
+}
+ 
