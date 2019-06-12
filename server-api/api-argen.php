@@ -64,13 +64,10 @@
 				);
 			}
 
-			if($rowcount < $postjson['limite']) $scroll = false;
-			else $scroll = true;
-
-			if($query) $result = json_encode(array('success'=>true, 'result'=>$dataAnimal, 'scroll'=>$scroll, 'msg'=>''));
-			else $result = json_encode(array('success'=>false, 'result'=>$dataAnimal, 'scroll'=>false, 'msg'=>'SQL não executado corretamente'));
+			if($query) $result = json_encode(array('success'=>true, 'result'=>$dataAnimal, 'rows'=>$rowcount, 'msg'=>''));
+			else $result = json_encode(array('success'=>false, 'result'=>$dataAnimal, 'rows'=>$rowcount, 'msg'=>'SQL não executado corretamente'));
 		}else{
-			$result = json_encode(array('success'=>false, 'result'=>$dataAnimal,  'scroll'=>false, 'msg'=>'Novos registros não encontrados'));
+			$result = json_encode(array('success'=>false, 'result'=>$dataAnimal, 'rows'=>0, 'msg'=>''));
 		}
 		
 		echo $result;
@@ -128,13 +125,10 @@
 				);
 			}
 			
-			if($rowcountFilter < $postjson['limite']) $scroll = false;
-			else $scroll = true;
-
-			if($queryFilter) $resultFilter = json_encode(array('success'=>true, 'result'=>$dataAnimalFilter, 'scroll'=>$scroll, 'msg'=>''));
-			else $resultFilter = json_encode(array('success'=>false, 'result'=>$dataAnimalFilter, 'scroll'=>false, 'msg'=>'SQL não executado corretamente'));
+			if($queryFilter) $resultFilter = json_encode(array('success'=>true, 'result'=>$dataAnimalFilter, 'rows'=>$rowcountFilter, 'msg'=>''));
+			else $resultFilter = json_encode(array('success'=>false, 'result'=>$dataAnimalFilter, 'rows'=>$rowcountFilter, 'msg'=>'SQL não executado corretamente'));
 		}else{
-			$resultFilter = json_encode(array('success'=>false, 'result'=>$dataAnimalFilter, 'scroll'=>false, 'msg'=>'Novos registros não encontrados'));
+			$resultFilter = json_encode(array('success'=>false, 'result'=>$dataAnimalFilter, 'rows'=>0, 'msg'=>''));
 		}
 		
 		echo $resultFilter;

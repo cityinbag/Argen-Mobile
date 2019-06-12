@@ -18,7 +18,7 @@ import { findComponentView } from '@angular/core/src/render3/util';
 export class AnimaisPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
-  animais = new Array<any>();
+  animais = Array<any>();
   categorias: any;
   nomeAnimal: string;
   idCategoria: number;
@@ -83,20 +83,26 @@ export class AnimaisPage implements OnInit {
       
       this.habilitarScroll(true);
 
-      this.animalService.getAnimais(body, 'api-argen.php').subscribe(data => {
+      this.animalService.apiAnimais(body, 'api-argen.php').subscribe(data => {
 
-        if (!data.scroll) {
+        if(data.rows==0){
           this.habilitarScroll(false);
-          this.inicio = 0;
-          this.presentToast(data.msg);
+          this.presentToast('Nenhum registro retornado.');
         }
         else {
-          if (this.inicio == 0) {
+          if(this.inicio == 0){
             this.animais = data.result;
-          } else {
-            // adicionar ao SCROLL os novos animais.
+          }
+          else{
+          // adicionar ao SCROLL os novos animais.
             for(let i=0; i<data.result.animais.length; i++){
               this.animais['animais'].push(data.result.animais[i]);
+            }
+
+            if (data.rows < this.limite) {
+              this.habilitarScroll(false);
+              this.inicio = 0;
+              this.presentToast('Últimos registros retornados.');
             }
           }
         }
@@ -121,24 +127,33 @@ export class AnimaisPage implements OnInit {
       console.log('inicio: ' + this.inicio);
       console.log('idcategoria: ' + this.idCategoria);
 
-      this.animalService.getAnimais(body, 'api-argen.php').subscribe(data => {
+      this.animalService.apiAnimais(body, 'api-argen.php').subscribe(data => {
 
         console.log(data);
         
-        if (!data.scroll && data.result.length < this.limite) {
+        if(data.rows==0){
+          if(this.animais['animais'].length>0) {
+            this.animais = [];
+          }
           this.habilitarScroll(false);
           this.inicio = 0;
-          this.presentToast(data.msg);
-          this.animais = this.animais;
+          this.presentToast('Nenhum registro retornado para o filtro aplicado.');
         }
         else {
-          if (this.inicio == 0) {
+          if(this.inicio == 0){
             this.animais = data.result;
-          } else {
+          }
+          else{
+          // adicionar ao SCROLL os novos animais.
             for(let i=0; i<data.result.animais.length; i++){
               this.animais['animais'].push(data.result.animais[i]);
             }
-            console.log(this.animais);
+
+            if (data.rows < this.limite) {
+              this.habilitarScroll(false);
+              this.inicio = 0;
+              this.presentToast('Últimos registros retornados para o filtro aplicado.');
+            }
           }
         }
       });
@@ -149,7 +164,7 @@ export class AnimaisPage implements OnInit {
 
   loadData(event) {
     setTimeout(() => {
-      this.inicio += 10;
+      this.inicio += this.limite;
       if (this.nomeAnimal == '' && this.idCategoria == 0) this.getAnimais();
       else this.getAnimaisByFilter(this.nomeAnimal);
       event.target.complete();
@@ -169,7 +184,7 @@ export class AnimaisPage implements OnInit {
   async presentToast(msg: string) {
     const toast = await this.toastController.create({
       message: msg,
-      duration: 5000
+      duration: 3000
     });
     toast.present();
   }

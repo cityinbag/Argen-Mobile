@@ -16,7 +16,7 @@ export class AnimalService {
   constructor(public http: Http) { 
   }
 
-  getAnimais(body, file):Observable<any>{
+  apiAnimais(body, file):Observable<any>{
     let type = "application/json; charset=UTF-8";
     let headers = new Headers({'Content-Type': type});
     let options = new RequestOptions({headers: headers});
