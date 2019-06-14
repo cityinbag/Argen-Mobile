@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy, PopoverController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -14,20 +14,29 @@ import { AnimalService } from './services/animal.service';
 
 import { HttpModule } from '@angular/http';
 import { AnimaisDetalheZoomPageModule } from './pages/animais-detalhe-zoom/animais-detalhe-zoom.module';
+import { PopoverDosesComponent } from './popover-doses/popover-doses.component';
+import { IonicStorageModule } from '@ionic/storage';
+import { StorageAnimalService } from './services/storage-animal.service';
+
+import {  FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, PopoverDosesComponent],
+  entryComponents: [PopoverDosesComponent],
   imports: [BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
     HttpModule, 
     HttpClientModule,
-    AnimaisDetalheZoomPageModule],
+    AnimaisDetalheZoomPageModule,
+    IonicStorageModule.forRoot(),
+    FormsModule],
   providers: [
     StatusBar,
-    AnimalService,
     SplashScreen,
+    AnimalService,
+    StorageAnimalService,
+    Storage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

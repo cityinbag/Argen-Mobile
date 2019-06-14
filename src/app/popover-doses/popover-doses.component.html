@@ -1,0 +1,15 @@
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Total de Doses</ion-label>
+      <ion-input [(ngModel)]="totalDoses" type="number"></ion-input>
+    </ion-item>
+</ion-list>
+
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addPedido()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>
+

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalService } from 'src/app/services/animal.service';
 
-import { IonInfiniteScroll, AngularDelegate } from '@ionic/angular';
+import { IonInfiniteScroll, AngularDelegate, PopoverController } from '@ionic/angular';
 import { ViewChild } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 
@@ -9,6 +9,8 @@ import { of, concat } from 'rxjs';
 import { forEach } from '@angular/router/src/utils/collection';
 import { defineDirective } from '@angular/core/src/render3';
 import { findComponentView } from '@angular/core/src/render3/util';
+import { Tab1PageModule } from 'src/app/tab1/tab1.module';
+import { PopoverDosesComponent } from 'src/app/popover-doses/popover-doses.component';
 
 @Component({
   selector: 'app-animais',
@@ -25,7 +27,7 @@ export class AnimaisPage implements OnInit {
   inicio: number;
   limite: number;
 
-  constructor(private animalService: AnimalService, public toastController: ToastController) {
+  constructor(private animalService: AnimalService, public toastCtrl: ToastController, public popoverCtrl: PopoverController) {
     this.nomeAnimal = '';
     this.idCategoria = 0;
     this.inicio = 0;
@@ -110,6 +112,7 @@ export class AnimaisPage implements OnInit {
     });
   }
 
+
   getAnimaisByFilter(filter_animal: string) {
     
     this.habilitarScroll(true);
@@ -160,8 +163,6 @@ export class AnimaisPage implements OnInit {
     });
   }
 
-
-
   loadData(event) {
     setTimeout(() => {
       this.inicio += this.limite;
@@ -182,11 +183,25 @@ export class AnimaisPage implements OnInit {
   }
 
   async presentToast(msg: string) {
-    const toast = await this.toastController.create({
+    const toast = await this.toastCtrl.create({
       message: msg,
       duration: 3000
     });
     toast.present();
   }
 
+  async addDoses(ev: any, animal) {
+    const popover = await this.popoverCtrl.create({
+        component: PopoverDosesComponent,
+        componentProps: animal,
+        event: ev,
+        animated: true,
+        showBackdrop: true
+    });
+    return await popover.present();
+  }
+  
+
 }
+
+
