@@ -15,7 +15,7 @@ export class MenuPage implements OnInit {
     },
     {
       titulo: 'Restrito',
-      url: './restrito/tabs'
+      url: '/menu/restrito'
     }
   ];
 
