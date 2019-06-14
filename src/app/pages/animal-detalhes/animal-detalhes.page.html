@@ -1,3 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
 
   <ion-card *ngFor="let animal of animais.animal">
@@ -30,23 +38,23 @@
 
 
   <ion-card *ngIf="fotos">
-      <ion-card-header>
-        <ion-card-title>Outras Fotos
-          <ion-card-subtitle>Vejas todas as fotos do Animal</ion-card-subtitle>
-        </ion-card-title>
-      </ion-card-header>
-  
-      <ion-card-content>
-        <ion-item lines="none">
-            <ion-slides [options]="sliderOpts">
-                <ion-slide *ngFor="let foto of fotos.fotos;  let i=index">
-                   <img [src]="foto.url_foto" tappable (click)="openPreview(foto.url_foto)">
-                </ion-slide>
-              </ion-slides>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-  
+    <ion-card-header>
+      <ion-card-title>Outras Fotos
+        <ion-card-subtitle>Vejas todas as fotos do Animal</ion-card-subtitle>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-slides [options]="sliderOpts">
+          <ion-slide *ngFor="let foto of fotos.fotos;  let i=index">
+            <img [src]="foto.url_foto" tappable (click)="openPreview(foto.url_foto)">
+          </ion-slide>
+        </ion-slides>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
 
   <ion-card *ngIf="arquivos">
     <ion-card-header>
