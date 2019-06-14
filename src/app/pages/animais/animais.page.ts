@@ -9,7 +9,6 @@ import { of, concat } from 'rxjs';
 import { forEach } from '@angular/router/src/utils/collection';
 import { defineDirective } from '@angular/core/src/render3';
 import { findComponentView } from '@angular/core/src/render3/util';
-import { Tab1PageModule } from 'src/app/tab1/tab1.module';
 import { PopoverDosesComponent } from 'src/app/popover-doses/popover-doses.component';
 
 @Component({

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>listaPedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list *ngFor="let animal of animais">
+
+          <ion-item button [routerLink]="['/', 'animais', animal.cod_animal]">
+    
+            <ion-thumbnail slot="start">
+              <ion-img [src]="animal.foto_animal" *ngIf="animal.foto_animal"></ion-img>
+            </ion-thumbnail>
+    
+            <ion-label *ngIf="animais" text-wrap>
+              <h2>{{ animal.nome_animal }}</h2>
+              <h3>{{animal.categoria.titulo_categoria}} - {{animal.subcategoria.titulo_subcategoria}}</h3>
+              <ion-input name="qtdDoses" value="animal.qtdDoses" type="number">{{animal.qtdDoses}}</ion-input>
+            </ion-label>
+
+         
+          </ion-item>
+          
+      </ion-list>
+    
+
+</ion-content>

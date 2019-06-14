@@ -31,10 +31,6 @@ export class PopoverDosesComponent implements OnInit {
           }
         }
       }
-      console.log('init: animais');
-      console.log(this.animais);
-      console.log('init: itens');
-      console.log(itens);
     });
   }
 
@@ -43,11 +39,6 @@ export class PopoverDosesComponent implements OnInit {
     this.storage.getItem().then( itens => {
       
       this.animais[0][0].qtde = this.totalDoses;
-      
-      console.log('add_ini: animais');
-      console.log(this.animais);
-      console.log('add_ini: itens');
-      console.log(itens);
 
       if(itens){ 
         
@@ -67,27 +58,11 @@ export class PopoverDosesComponent implements OnInit {
         this.storage.addItem(this.animais);
       }
 
-      console.log('add_fim: animais');
-      console.log(this.animais);
-      console.log('add_fim: itens');
-      console.log(itens);
-
-
     });
     this.popoverCtrl.dismiss();
-  /*    
     this.presentToast("Item adicionado a lista de pedidos atual.");
-    this.popoverCtrl.dismiss(this.totalDoses);
-    this.getPedido();
-    */
   }
-
-  getPedido(){
-    this.storage.getItem().then( obj => {
-      console.log(obj);
-    });
-  }
-
+  
   async presentToast(msg: string) {
     const toast = await this.toastCtrl.create({
       message: msg,
