@@ -20,9 +20,13 @@ export class AnimaisDetalheZoomPage implements OnInit {
               private modalController: ModalController) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter(){
     this.img = this.navParams.get('img');
   }
 
+  
   close(){
     this.modalController.dismiss();
   }

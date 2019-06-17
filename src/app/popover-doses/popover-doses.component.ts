@@ -17,17 +17,21 @@ export class PopoverDosesComponent implements OnInit {
               public storage: StorageAnimalService) {  }
 
   ngOnInit() {
-    this.animais.push([{animal: this.navParams.data, qtde: 0}]);
+  }
+
+  ionViewWillEnter(){
+    this.animais.push({animal: this.navParams.data, qtdeDoses: 0});
     this.totalDoses = 0;
     this.inicializaPedido();
   }
+
 
   inicializaPedido(){
     this.storage.getItem().then( itens => {
       if(itens){ 
         for(let i=0; i<itens.length; i++){
-          if(this.animais[0][0].animal.cod_animal == itens[i][0].animal.cod_animal){
-            this.totalDoses = itens[i][0].qtde;
+          if(this.animais[0].animal.cod_animal == itens[i].animal.cod_animal){
+            this.totalDoses = itens[i].qtdeDoses;
           }
         }
       }
@@ -37,15 +41,13 @@ export class PopoverDosesComponent implements OnInit {
   
   addPedido(){
     this.storage.getItem().then( itens => {
-      
-      this.animais[0][0].qtde = this.totalDoses;
+      this.animais[0].qtdeDoses = this.totalDoses;
 
       if(itens){ 
-        
         let encontrou = false;
         for(let i=0; i<itens.length; i++){
-          if(this.animais[0][0].animal.cod_animal == itens[i][0].animal.cod_animal){
-            itens[i][0].qtde = this.totalDoses;
+          if(this.animais[0].animal.cod_animal == itens[i].animal.cod_animal){
+            itens[i].qtdeDoses = this.totalDoses;
             encontrou = true;
           }
         }

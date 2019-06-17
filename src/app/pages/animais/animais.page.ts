@@ -43,6 +43,9 @@ export class AnimaisPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter(){
     this.getAnimais();
   }
 

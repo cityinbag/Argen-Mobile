@@ -9,24 +9,49 @@
 
 <ion-content>
 
-    <ion-list *ngFor="let animal of animais">
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="settings"></ion-icon>
+    </ion-fab-button>
 
-          <ion-item button [routerLink]="['/', 'animais', animal.cod_animal]">
-    
-            <ion-thumbnail slot="start">
-              <ion-img [src]="animal.foto_animal" *ngIf="animal.foto_animal"></ion-img>
-            </ion-thumbnail>
-    
-            <ion-label *ngIf="animais" text-wrap>
-              <h2>{{ animal.nome_animal }}</h2>
-              <h3>{{animal.categoria.titulo_categoria}} - {{animal.subcategoria.titulo_subcategoria}}</h3>
-              <ion-input name="qtdDoses" value="animal.qtdDoses" type="number">{{animal.qtdDoses}}</ion-input>
-            </ion-label>
+    <ion-fab-list side="left">
+      <ion-fab-button>
+        <ion-icon name="mail"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
 
-         
-          </ion-item>
-          
-      </ion-list>
-    
+    <ion-fab-list side="start">
+      <ion-fab-button (click)="atualizarLista()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+  </ion-fab>
+
+
+  <ion-list *ngFor="let animal of animais">
+
+    <ion-item-sliding>
+      <ion-item-options side="start">
+        <ion-item-option color="danger" (click)="excluirAnimal(animal.animal.cod_animal)">Excluir</ion-item-option>
+      </ion-item-options>
+
+      <ion-item>
+        <ion-thumbnail slot="start" button [routerLink]="['/', 'animais', animal.animal.cod_animal]">
+          <ion-img [src]="animal.animal.foto_animal" *ngIf="animal.animal.foto_animal"></ion-img>
+        </ion-thumbnail>
+
+        <ion-label *ngIf="animais" text-wrap>
+          <h2></h2>
+          <h3>{{ animal.animal.categoria.titulo_categoria }} - {{ animal.animal.subcategoria.titulo_subcategoria }}</h3>          
+
+        </ion-label>
+
+        <ion-input [(ngModel)]="animal.qtdeDoses" type="number"></ion-input>
+      </ion-item>
+    </ion-item-sliding>
+
+  </ion-list>
+
 
 </ion-content>

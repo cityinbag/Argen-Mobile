@@ -29,11 +29,15 @@ export class AnimalDetalhesPage implements OnInit {
               private modalController: ModalController) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter(){
     this.cod_animal = <number><unknown>this.activateRoute.snapshot.paramMap.get('id');
     this.getAnimalInfo();
     this.getAnimalArquivo();
     this.getAnimalFoto();
   }
+
 
   getAnimalInfo() {
     return new Promise(resolve => {
