@@ -20,7 +20,7 @@
 
           <ion-item-sliding>
             <ion-item-options side="start">
-              <ion-item-option (click)="excluirEmpresa($event, empresa)">Excluir</ion-item-option>
+              <ion-item-option (click)="excluirEmpresa(empresa.cod_empresa)">Excluir</ion-item-option>
             </ion-item-options>
       
             <ion-item button [routerLink]="['/', 'empresas', empresa.cod_empresa]">

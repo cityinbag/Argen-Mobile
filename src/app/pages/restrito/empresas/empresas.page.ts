@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { EmpresaService } from 'src/app/services/empresa.service';
 import { ToastController, IonInfiniteScroll } from '@ionic/angular';
+import { AnimalDetalhesPage } from '../../animal-detalhes/animal-detalhes.page';
 
 
 @Component({
@@ -46,11 +47,6 @@ export class EmpresasPage implements OnInit {
 
     this.empresaService.apiEmpresas(body, 'api-argen-empresas.php').subscribe(data => {
 
-   console.log(this.inicio);
-   console.log(data);
-   console.log(data.rows);   
-   console.log(this.empresas);
-
       if(data.rows==0){
         this.habilitarScroll(false);
         this.presentToast('Nenhum registro retornado.');
@@ -74,6 +70,33 @@ export class EmpresasPage implements OnInit {
       }
     });
   }
+
+  excluirEmpresa(cod_empresa){
+    let body = {
+      ask: 'delEmpresa',
+      cod_empresa: cod_empresa
+    };
+
+console.log(body);
+
+    this.empresaService.apiEmpresas(body, 'api-argen-empresas.php').subscribe(data => {
+      if(data.success){
+        this.presentToast('Empresa excluída.');
+
+        for (let i = 0; i < this.empresas.length; i++) {
+          if (this.empresas[i].cod_empresa == cod_empresa) {
+            this.empresas.splice(i, 1);
+          }
+        }
+    
+        this.inicio = 0;
+        this.getEmpresas();
+      }else{
+       this.presentToast('Erro: ' + data.msg);
+      }
+      });
+  }
+
 
   habilitarScroll(status: boolean) {
     this.infiniteScroll.disabled = !status;
