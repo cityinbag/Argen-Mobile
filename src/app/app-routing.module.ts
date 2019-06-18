@@ -6,6 +6,7 @@ const routes: Routes = [
     { path: '', loadChildren: './pages/menu/menu.module#MenuPageModule' },
     { path: 'animais/:id', loadChildren: './pages/animal-detalhes/animal-detalhes.module#AnimalDetalhesPageModule' },      
     { path: 'animais-detalhe-zoom', loadChildren: './pages/animais-detalhe-zoom/animais-detalhe-zoom.module#AnimaisDetalheZoomPageModule' },
+    { path: 'add-empresa', loadChildren: './pages/restrito/add-empresa/add-empresa.module#AddEmpresaPageModule' },
  ];
 
  @NgModule({

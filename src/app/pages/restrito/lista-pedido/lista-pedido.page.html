@@ -7,26 +7,41 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
-  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="settings"></ion-icon>
-    </ion-fab-button>
+  <ion-searchbar placeholder="Escolha a empresa para o pedido..."></ion-searchbar>
 
-    <ion-fab-list side="left">
-      <ion-fab-button>
-        <ion-icon name="mail"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
+  <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Pedido para...</ion-card-subtitle>
+        <ion-card-title>Nome da Empresa</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        CNPJ: 111.111.0001-12
+      </ion-card-content>
 
-    <ion-fab-list side="start">
-      <ion-fab-button (click)="atualizarLista()">
-        <ion-icon name="refresh"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
+      <ion-fab vertical="top" horizontal="end" slot="fixed">
+          <ion-fab-button>
+            <ion-icon name="settings"></ion-icon>
+          </ion-fab-button>
+      
+          <ion-fab-list side="left">
+            <ion-fab-button>
+              <ion-icon name="mail"></ion-icon>
+            </ion-fab-button>
+          </ion-fab-list>
+      
+          <ion-fab-list side="start">
+            <ion-fab-button (click)="atualizarLista()">
+              <ion-icon name="refresh"></ion-icon>
+            </ion-fab-button>
+          </ion-fab-list>
+      
+        </ion-fab>
+      
+    </ion-card>
 
-  </ion-fab>
 
 
   <ion-list *ngFor="let animal of animais">
@@ -49,6 +64,7 @@
 
         <ion-input [(ngModel)]="animal.qtdeDoses" type="number"></ion-input>
       </ion-item>
+
     </ion-item-sliding>
 
   </ion-list>

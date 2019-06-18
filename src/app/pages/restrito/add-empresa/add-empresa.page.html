@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-back-button></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Adicionar Empresa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="formGroup">
+
+    <ion-item>
+    <ion-input type="text" placeholder="Nome da Empresa" formControlName="nome_empresa"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="CNPJ da Empresa" formControlName="cnpj_empresa"></ion-input>
+  </ion-item>
+  
+  <ion-button (click)="cadastrar()" expand="block" padding color="tertiary" [disabled]="!formGroup.valid">Cadastrar</ion-button>
+</form>
+
+</ion-content>

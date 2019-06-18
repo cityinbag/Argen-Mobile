@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="addEmpresa()">
+          <ion-icon name="add-circle"></ion-icon>
+        </ion-button>
+        </ion-buttons>
+  
+      <ion-title>Gestão de Empresas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+
+    <ion-list *ngFor="let empresa of empresas">
+
+          <ion-item-sliding>
+            <ion-item-options side="start">
+              <ion-item-option (click)="excluirEmpresa($event, empresa)">Excluir</ion-item-option>
+            </ion-item-options>
+      
+            <ion-item button [routerLink]="['/', 'empresas', empresa.cod_empresa]">
+            
+            <ion-label>
+                <ion-text color="primary">
+                  <h1>{{empresa.nome_empresa}}</h1>
+                </ion-text>
+                <h3>{{empresa.cnpj_empresa}}</h3>
+            </ion-label>
+
+            </ion-item>
+            
+          </ion-item-sliding>
+        </ion-list>
+      
+        <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+          <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Carregando mais dados...">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+          
+  </ion-content>

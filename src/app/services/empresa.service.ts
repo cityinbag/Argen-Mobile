@@ -8,15 +8,14 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AnimalService {
+export class EmpresaService {
 
   server: string = 'http://evsite.com.br/argen/';
   
-
   constructor(public http: Http) { 
   }
 
-  apiAnimais(body, file):Observable<any>{
+  apiEmpresas(body, file):Observable<any>{
     let type = "application/json; charset=UTF-8";
     let headers = new Headers({'Content-Type': type});
     let options = new RequestOptions({headers: headers});
@@ -25,4 +24,7 @@ export class AnimalService {
     .map(res => res.json());
   }
 
+
 }
+
+

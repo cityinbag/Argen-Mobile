@@ -46,7 +46,7 @@ export class AnimalDetalhesPage implements OnInit {
         cod_animal: this.cod_animal
       };
 
-      this.animalService.apiAnimais(body, 'api-argen.php').subscribe(data => {
+      this.animalService.apiAnimais(body, 'api-argen-animais.php').subscribe(data => {
 
         if (data.success) {
           this.animais = data.result;
@@ -64,7 +64,7 @@ export class AnimalDetalhesPage implements OnInit {
         cod_animal: this.cod_animal
       };
 
-      this.animalService.apiAnimais(body, 'api-argen.php').subscribe(data => {
+      this.animalService.apiAnimais(body, 'api-argen-animais.php').subscribe(data => {
 
         if (data.success) {
           this.arquivos = data.result;
@@ -85,7 +85,7 @@ export class AnimalDetalhesPage implements OnInit {
       
       console.log('fotos');
 
-      this.animalService.apiAnimais(body, 'api-argen.php').subscribe(data => {
+      this.animalService.apiAnimais(body, 'api-argen-animais.php').subscribe(data => {
 
         console.log(data);
 

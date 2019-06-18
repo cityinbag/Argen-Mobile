@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageAnimalService } from 'src/app/services/storage-animal.service';
-import { ConsoleReporter } from 'jasmine';
 import { ToastController } from '@ionic/angular';
 
 @Component({

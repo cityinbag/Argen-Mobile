@@ -87,7 +87,7 @@ export class AnimaisPage implements OnInit {
       
       this.habilitarScroll(true);
 
-      this.animalService.apiAnimais(body, 'api-argen.php').subscribe(data => {
+      this.animalService.apiAnimais(body, 'api-argen-animais.php').subscribe(data => {
 
         if(data.rows==0){
           this.habilitarScroll(false);
@@ -132,7 +132,7 @@ export class AnimaisPage implements OnInit {
       console.log('inicio: ' + this.inicio);
       console.log('idcategoria: ' + this.idCategoria);
 
-      this.animalService.apiAnimais(body, 'api-argen.php').subscribe(data => {
+      this.animalService.apiAnimais(body, 'api-argen-animais.php').subscribe(data => {
 
         console.log(data);
         

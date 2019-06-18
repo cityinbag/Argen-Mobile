@@ -14,14 +14,9 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsPage,
     children: [
-      {
-        path: 'lista-pedido',
-        loadChildren: '../lista-pedido/lista-pedido.module#ListaPedidoPageModule'
-      },
-      {
-        path: 'perfil',
-        loadChildren: '../perfil/perfil.module#PerfilPageModule'
-      }      
+      { path: 'lista-pedido', loadChildren: '../lista-pedido/lista-pedido.module#ListaPedidoPageModule' },
+      { path: 'empresas', loadChildren: '../empresas/empresas.module#EmpresasPageModule' },
+      { path: 'perfil', loadChildren: '../perfil/perfil.module#PerfilPageModule' }      
     ]
   },
   {
